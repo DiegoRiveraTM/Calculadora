@@ -1,0 +1,158 @@
+/* Fondo de la página */
+body {
+    display: flex; /* Flexbox para centrar contenido */
+    flex-direction: column; /* Direcciona los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    font-family: Arial, sans-serif; /* Fuente principal */
+    background-color: #09111d; /* Color de fondo oscuro */
+    color: white; /* Color de texto blanco */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Sin margen externo */
+    overflow: hidden; /* Oculta desbordamientos */
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+}
+
+.titulo {
+    font-size: 28px; /* Tamaño de fuente para el título */
+    color: #ffffff; /* Color de texto blanco */
+    animation: fadeIn 2s ease; /* Animación de aparición suave */
+    z-index: 1; /* Prioridad sobre otros elementos */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.container {
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: center; /* Centra elementos horizontalmente */
+    align-items: center; /* Centra elementos verticalmente */
+    flex-direction: column; /* Direcciona en columna */
+    width: 100%; /* Ancho completo del contenedor */
+    margin-top: -10px; /* Ajusta el margen superior */
+    z-index: 1; /* Prioridad sobre elementos de fondo */
+}
+
+.animated-calculator {
+    padding: 20px; /* Espacio interno */
+    background-color: #1B263B; /* Color de fondo de la calculadora */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra alrededor */
+    animation: slideUp 1s ease; /* Animación de deslizamiento hacia arriba */
+    transition: transform 0.3s ease; /* Transición suave en hover */
+    width: 300px; /* Ancho fijo de la calculadora */
+    max-width: 90%; /* Máximo ancho del 90% en pantallas pequeñas */
+    position: relative; /* Posicionamiento relativo */
+    z-index: 2; /* Prioridad sobre el fondo */
+}
+
+.animated-calculator:hover {
+    transform: scale(1.05); /* Agranda ligeramente al pasar el ratón */
+}
+
+.pantalla {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1.8em; /* Tamaño de fuente grande */
+    text-align: right; /* Texto alineado a la derecha */
+    color: #ffffff; /* Color de texto blanco */
+    margin-bottom: 20px; /* Espacio debajo de la pantalla */
+    border: 1px solid #ffffff; /* Borde blanco */
+    overflow: hidden; /* Oculta desbordamientos */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+#resultado {
+    background-color: transparent; /* Fondo transparente */
+    color: #ffffff; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    width: 100%; /* Ancho completo */
+    font-size: 1em; /* Tamaño de fuente */
+    outline: none; /* Sin borde al hacer clic */
+    text-align: right; /* Texto alineado a la derecha */
+}
+
+/* Contenedor de botones */
+#contenedor-botones {
+    display: grid; /* Usa un grid para organizar los botones */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    gap: 10px; /* Espacio entre botones */
+    width: 100%; /* Ancho completo */
+}
+
+button.num, button.operacion, button.accion {
+    padding: 15px; /* Espacio interno */
+    font-size: 1.2em; /* Tamaño de fuente grande */
+    border-radius: 8px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    background-color: #c1c1c1; /* Fondo gris claro */
+    color: black; /* Color de texto negro */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave */
+}
+
+button.num:hover, button.operacion:hover, button.accion:hover {
+    background-color: #e2e2e2; /* Color de fondo al hacer hover */
+    transform: scale(1.1); /* Agranda ligeramente al hacer hover */
+}
+
+button.accion {
+    background-color: #ff7373; /* Color de fondo rojo claro */
+    color: white; /* Color de texto blanco */
+}
+
+button.accion:hover {
+    background-color: #ff4d4d; /* Color más oscuro al hacer hover */
+}
+
+/* Partículas */
+.particles {
+    position: fixed; /* Fija las partículas en la pantalla */
+    top: 0; /* Alineación superior */
+    left: 0; /* Alineación izquierda */
+    width: 100vw; /* Ancho de toda la pantalla */
+    height: 100vh; /* Altura de toda la pantalla */
+    pointer-events: none; /* Ignora los eventos del ratón */
+    z-index: 0; /* Prioridad baja para que estén en el fondo */
+    overflow: hidden; /* Oculta desbordamientos */
+}
+
+.particle {
+    position: absolute; /* Posición absoluta para movimiento libre */
+    width: 12px; /* Ancho de cada partícula */
+    height: 12px; /* Altura de cada partícula */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent); /* Gradiente */
+    border-radius: 50%; /* Forma circular */
+    box-shadow: 0px 0px 15px 8px rgba(255,255,255,0.7); /* Brillo suave */
+}
+
+/* Colores de las partículas basadas en posición */
+.particle:nth-child(4n) { background: radial-gradient(circle, rgba(255, 45, 117, 0.8), transparent); }
+.particle:nth-child(4n-1) { background: radial-gradient(circle, rgba(255, 159, 28, 0.8), transparent); }
+.particle:nth-child(4n-2) { background: radial-gradient(circle, rgba(46, 196, 182, 0.8), transparent); }
+.particle:nth-child(4n-3) { background: radial-gradient(circle, rgba(231, 29, 54, 0.8), transparent); }
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% { opacity: 0; } /* Inicio en invisible */
+    100% { opacity: 1; } /* Aparece gradualmente */
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; } /* Comienza desplazado y transparente */
+    100% { transform: translateY(0); opacity: 1; } /* Termina en posición original */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

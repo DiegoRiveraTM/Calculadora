@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuración de codificación de caracteres y vista de pantalla -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Calculadora Formal y Animada</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título principal de la calculadora -->
+    <h1 class="titulo">Calculadora</h1>
+
+    <!-- Contenedor principal de la calculadora y el efecto de partículas -->
+    <div class="container">
+        <!-- Contenedor de la calculadora con animación -->
+        <div id="calculadora" class="animated-calculator">
+            <!-- Pantalla de la calculadora para mostrar los resultados -->
+            <div class="pantalla">
+                <input type="text" id="resultado" readonly value="0">
+            </div>
+
+            <!-- Contenedor de los botones de la calculadora -->
+            <div id="contenedor-botones">
+                <!-- Botones de operación y de números organizados en el nuevo orden -->
+                <button class="num" type="button">7</button>
+                <button class="num" type="button">8</button>
+                <button class="num" type="button">9</button>
+                <button class="operacion" id="dividir" type="button">/</button>
+                <button class="num" type="button">4</button>
+                <button class="num" type="button">5</button>
+                <button class="num" type="button">6</button>
+                <button class="operacion" id="multiplicar" type="button">*</button>
+                <button class="num" type="button">1</button>
+                <button class="num" type="button">2</button>
+                <button class="num" type="button">3</button>
+                <button class="operacion" id="restar" type="button">-</button>
+                <button class="num" type="button">0</button>
+                <button class="num" type="button">.</button>
+                <button class="operacion" id="sumar" type="button">+</button>
+                <button class="accion" id="borrar" type="button">←</button>
+                <!-- Botón de igual al final de la cuadrícula -->
+                <button class="accion" id="igual" type="button">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de partículas de fondo -->
+    <div class="particles"></div>
+    
+    <!-- Enlace al archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
